@@ -1,0 +1,43 @@
+.message__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+
+  &.right {
+    flex-direction: row;
+    align-items: flex-end;
+
+    .message {
+      align-items: flex-start;
+
+      .text {
+        background: white;
+        border-color: #eee;
+      }
+    }
+  }
+
+  div {
+    width: 50%;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .text {
+      width: 100%;
+      background: rgba(paleturquoise, 0.3);
+      border: 1px solid paleturquoise;
+      padding: 10px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+  }
+
+  .author {
+    font-weight: bold;
+  }
+}

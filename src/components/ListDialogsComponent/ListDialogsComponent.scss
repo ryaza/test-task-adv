@@ -1,0 +1,22 @@
+.sidebar {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  color: #000;
+  border-left: 3px solid #eee;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.router-link-active, &.selected {
+    border-color: cornflowerblue;
+    background: #fff;
+  }
+}
+
+.caption {
+  font-weight: bold;
+}

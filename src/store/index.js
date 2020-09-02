@@ -20,6 +20,17 @@ export default new Vuex.Store({
     setMessageData(state, data) {
       state.messageData = data;
     },
+
+    addMessage(state, message) {
+      const value = {
+        id: state.selectedDialog.parts.length + 1,
+        author: 'petya',
+        created: new Date(),
+        text: message,
+      };
+
+      state.selectedDialog.parts.push(value);
+    },
   },
   actions: {
     loadData({ commit, state }) {

@@ -1,7 +1,21 @@
 <template>
-    <form>
-        <input type="text" placeholder="Введите текст..."/>
-        <button type="submit"> send </button>
+    <form class="form">
+        <input
+            v-model="message"
+            class="field"
+            type="text"
+            placeholder="Введите текст..."
+            :disabled="isLoading"
+        />
+        <button
+            class="button"
+            type="submit"
+            :disabled="isLoading"
+            @click="add"
+        >
+            <span v-if="!isLoading"> Send </span>
+            <spinner-component class="loading" v-else/>
+        </button>
     </form>
 </template>
 <script src="./TypeFieldComponent.js"/>

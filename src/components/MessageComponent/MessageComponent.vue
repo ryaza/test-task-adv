@@ -4,7 +4,7 @@
             <span class="text"> {{ message.text }}</span>
             <div class="info">
                 <span class="author"> {{ message.author }}</span>
-                <span> {{ message.created }}</span>
+                <span class="data"> {{ message.time }} {{ message.date }}</span>
             </div>
         </div>
         <div class="empty"/>

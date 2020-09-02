@@ -1,11 +1,11 @@
 <template>
     <div class="messages">
         <message-component
-            v-for="(message, index) in messageArray"
+            v-for="message in messageArray"
             :key="message.id"
             :message="message"
             class="messages__message"
-            :side="index%2 ? 'right' : 'left'"
+            :side="message.side"
         />
     </div>
 </template>

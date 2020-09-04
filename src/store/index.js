@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import testData from '@/assets/data/test-data.json';
+import DatetimeUtil from '@/assets/helpers';
 
 Vue.use(Vuex);
 
@@ -10,8 +11,36 @@ export default new Vuex.Store({
     selectedDialog: null,
     isLoading: false,
   },
+  getters: {
+    getSelectedDialog(state) {
+      const parts = state.selectedDialog?.parts;
+
+      let right = true;
+      let prevAuthor = parts[0].author;
+
+      return parts.map((message) => {
+        if (message.author !== prevAuthor) {
+          prevAuthor = message.author;
+          right = !right;
+        }
+
+        const date = new Date(message.created);
+
+        return {
+          ...message,
+          side: right ? 'right' : 'left',
+          time:
+              `${DatetimeUtil.formatDate(date.getHours())}:
+              ${DatetimeUtil.formatDate(date.getMinutes())}`,
+          date:
+              `${DatetimeUtil.formatDate(date.getDate())}.
+              ${DatetimeUtil.formatDate(date.getMonth())}.${date.getFullYear()}`,
+        };
+      });
+    },
+  },
   mutations: {
-    selectDialog(state, { dialog }) {
+    selectDialog(state, dialog) {
       if (dialog != null) {
         state.selectedDialog = dialog;
       }
@@ -21,10 +50,10 @@ export default new Vuex.Store({
       state.messageData = data;
     },
 
-    addMessage(state, message) {
+    addMessage(state, { author, message }) {
       const value = {
         id: state.selectedDialog.parts.length + 1,
-        author: 'petya',
+        author,
         created: new Date(),
         text: message,
       };
@@ -38,7 +67,7 @@ export default new Vuex.Store({
 
       setTimeout(() => {
         commit('setMessageData', testData);
-        commit('selectDialog', { dialog: testData[0] });
+        commit('selectDialog', testData[0]);
 
         state.isLoading = false;
       }, 1);

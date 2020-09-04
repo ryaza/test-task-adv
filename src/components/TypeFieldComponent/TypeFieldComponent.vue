@@ -6,6 +6,7 @@
             type="text"
             placeholder="Введите текст..."
             :disabled="isLoading"
+            ref="field"
         />
         <button
             class="button"

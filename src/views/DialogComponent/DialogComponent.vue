@@ -8,7 +8,7 @@
                 v-for="data in messageData"
                 :key="data.id"
                 class="dialog"
-                @click="select({ dialog: data })"
+                @click="select(data)"
             >
                 <list-dialogs-component
                     :data="data"

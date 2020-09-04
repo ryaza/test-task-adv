@@ -1,8 +1,9 @@
 <template>
     <div>
         <router-link
-                :to="`/dialog/${data.id}`"
-                :class="[selectedDialog.id === data.id ? 'selected' : '', 'sidebar']">
+            :to="`/dialog/${data.id}`"
+            :class="[selectedDialog.id === data.id ? 'selected' : '', 'sidebar']"
+        >
             <div class="caption">
                 {{ data.subject}}
             </div>

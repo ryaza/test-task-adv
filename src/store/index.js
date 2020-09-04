@@ -30,11 +30,9 @@ export default new Vuex.Store({
           ...message,
           side: right ? 'right' : 'left',
           time:
-              `${DatetimeUtil.formatDate(date.getHours())}:
-              ${DatetimeUtil.formatDate(date.getMinutes())}`,
+              `${DatetimeUtil.formatDate(date.getHours())}:${DatetimeUtil.formatDate(date.getMinutes())}`,
           date:
-              `${DatetimeUtil.formatDate(date.getDate())}.
-              ${DatetimeUtil.formatDate(date.getMonth())}.${date.getFullYear()}`,
+              `${DatetimeUtil.formatDate(date.getDate())}.${DatetimeUtil.formatDate(date.getMonth())}.${date.getFullYear()}`,
         };
       });
     },
@@ -67,7 +65,7 @@ export default new Vuex.Store({
 
       setTimeout(() => {
         commit('setMessageData', testData);
-        commit('selectDialog', testData[0]);
+        commit('selectDialog', state.messageData[0]);
 
         state.isLoading = false;
       }, 1);

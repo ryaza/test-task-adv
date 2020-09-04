@@ -1,48 +1,54 @@
-.message__wrapper {
+.messages-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
 
-  &.left {
+  &--left {
     flex-direction: row;
     align-items: flex-end;
 
-    .message {
+    .messages-wrapper__message {
       align-items: flex-start;
 
-      .text {
-        background: white;
-        border-color: #eee;
+      .message {
+        &__text {
+          background: rgba(paleturquoise, 0.3);
+          border: 1px solid paleturquoise;
+        }
       }
     }
   }
 
-  div {
+  &__message {
     width: 50%;
   }
+}
 
-  .message {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-    .text {
-      width: 100%;
-      background: rgba(paleturquoise, 0.3);
-      border: 1px solid paleturquoise;
-      padding: 10px;
-      border-radius: 10px;
-      box-sizing: border-box;
-      text-align: left;
-    }
-
-    .info {
-      width: 100%;
-      text-align: right;
-    }
+  &__text {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    background: white;
+    border: 1px solid #eee;
   }
 
-  .author {
+  &__info {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.info {
+  &__author {
     font-weight: bold;
   }
 }
+

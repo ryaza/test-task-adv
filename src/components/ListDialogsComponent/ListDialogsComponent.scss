@@ -1,4 +1,4 @@
-.sidebar {
+.dialog-item {
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -11,12 +11,12 @@
     margin-bottom: 0;
   }
 
-  &.selected {
+  &--selected {
     border-color: cornflowerblue;
     background: #fff;
   }
-}
 
-.caption {
-  font-weight: bold;
+  &__caption {
+    font-weight: bold;
+  }
 }

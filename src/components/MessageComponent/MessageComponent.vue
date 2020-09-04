@@ -1,13 +1,18 @@
 <template>
-    <div :class="['message__wrapper', side]">
-        <div class="message">
-            <span class="text"> {{ message.text }}</span>
-            <div class="info">
-                <span class="author"> {{ message.author }}</span>
-                <span class="data"> {{ message.time }} {{ message.date }}</span>
+    <div
+        :class="[
+            'messages-wrapper',
+            `messages-wrapper--${side}`,
+        ]"
+    >
+        <div class="messages-wrapper__message">
+            <span class="message__text"> {{ message.text }}</span>
+            <div class="message__info">
+                <span class="info__author"> {{ message.author }}</span>
+                <span> {{ message.time }} {{ message.date }}</span>
             </div>
         </div>
-        <div class="empty"/>
+        <div/>
     </div>
 </template>
 <script src="./MessageComponent.js"/>

@@ -1,3 +1,5 @@
-.messages__message {
-  margin-bottom: 20px;
+.messages {
+  &__message {
+    margin-bottom: 20px;
+  }
 }

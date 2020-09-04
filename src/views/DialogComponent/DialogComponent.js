@@ -1,6 +1,6 @@
 import ListDialogsComponent from '@/components/ListDialogsComponent/ListDialogsComponent.vue';
 import MessagesComponent from '@/components/MessagesComponent/MessagesComponent.vue';
-import LoadingComponent from '@/components/LoadingComponent/LoadingComponent.vue';
+import SpinnerComponent from '@/components/SpinnerComponent/SpinnerComponent.vue';
 import TypeFieldComponent from '@/components/TypeFieldComponent/TypeFieldComponent.vue';
 import { mapState, mapMutations, mapActions } from 'vuex';
 
@@ -9,7 +9,7 @@ export default {
   components: {
     ListDialogsComponent,
     MessagesComponent,
-    LoadingComponent,
+    SpinnerComponent,
     TypeFieldComponent,
   },
   computed: {

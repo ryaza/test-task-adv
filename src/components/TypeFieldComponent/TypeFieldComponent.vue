@@ -2,20 +2,20 @@
     <form class="form">
         <input
             v-model="message"
-            class="field"
+            class="form__field"
             type="text"
             placeholder="Введите текст..."
             :disabled="isLoading"
             ref="field"
         />
         <button
-            class="button"
+            class="form__button"
             type="submit"
             :disabled="isLoading"
             @click="add"
         >
             <span v-if="!isLoading"> Send </span>
-            <spinner-component class="loading" v-else/>
+            <spinner-component v-else/>
         </button>
     </form>
 </template>
